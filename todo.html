@@ -8,11 +8,14 @@
 </head>
 <body>
     <h1 id="mainHeading">TODO App</h1>
+    
+    <div class="grid-container">
     <input id="todo-input" type="text" placeholder="Enter TODO here">
     <input id="todo-date" type="date">
-    <button onclick="addTODO();">Add</button>
-    
-    <div class="todo-container"></div>
+    <button class="btn-todo" onclick="addTODO();">Add</button>
+    </div>  
+
+    <div class="todo-container grid-container"></div>
     
 
     <script src="todo.js"></script>

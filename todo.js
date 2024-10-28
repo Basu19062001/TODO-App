@@ -32,12 +32,11 @@ function displayItems(){
         // let dueDate = todoLists[i].dueDate; / instead we can use
         let {item,dueDate} = todoLists[i];
         newHtml += `
-        <div>
         <span>${item}</span>
         <span>${dueDate}</span>
-        <button onClick="todoLists.splice(${i}, 1);
+        <button class="btn-delete" onClick="todoLists.splice(${i}, 1);
         displayItems();">Delete</button>
-        </div>
+        
         `;
     }
     containerElement.innerHTML = newHtml;
