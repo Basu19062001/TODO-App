@@ -1,11 +1,25 @@
-let todoLists = ['Buy Milk','Go to college'];
+let todoLists = [
+    {
+        item: 'Buy Milk', 
+        dueDate: '28/10/2024',
+    },
+    {
+        item: 'Go to college',
+        dueDate: '28/10/2024',
+    },
+    ];
 displayItems();
 
 function addTODO(){
     let inputElement = document.querySelector('#todo-input');
     let todoItem = inputElement.value; 
-    todoLists.push(todoItem);
+    
+    let dateElement = document.querySelector('#todo-date');
+    let todoDate = dateElement.value;
+
+    todoLists.push({item: todoItem, dueDate: todoDate});
     inputElement.value = '';
+    dateElement.value = '';
     displayItems();
 }
 
@@ -14,9 +28,13 @@ function displayItems(){
     let newHtml = '';
 
     for(let i=0; i<todoLists.length; i++){
+        // let item = todoLists[i].item;
+        // let dueDate = todoLists[i].dueDate; / instead we can use
+        let {item,dueDate} = todoLists[i];
         newHtml += `
         <div>
-        <span>${todoLists[i]}</span>
+        <span>${item}</span>
+        <span>${dueDate}</span>
         <button onClick="todoLists.splice(${i}, 1);
         displayItems();">Delete</button>
         </div>
